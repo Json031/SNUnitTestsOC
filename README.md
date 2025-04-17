@@ -5,6 +5,34 @@ SNUnitTestsOC 是一个基于XCTest框架开发的Objective-C开源项目，集�
 <br>SNUnitTestsOC is a Objective-C open source project developed based on the XCTest framework, which integrates UI automation testing, high concurrency, and unit testing covering APIs and class methods, making it convenient for developers to understand the UI API、 Conduct comprehensive automated unit testing on high concurrency modules such as class methods.
 * 最新版本 Latest Version: [![CocoaPods](https://img.shields.io/cocoapods/v/SNUnitTestsOC.svg)](https://cocoapods.org/pods/SNUnitTestsOC)
 
+### Installation 安装:
+
+* CocoaPods
+The [SNUnitTestsOC SDK for iOS](https://github.com/Json031/SNUnitTestsOC) is available through [CocoaPods](http://cocoapods.org). If CocoaPods is not installed, install it using the following command. Note that Ruby will also be installed, as it is a dependency of Cocoapods.
+```bash
+    brew install cocoapods
+    pod setup
+```
+```bash
+   $iOSVersion = '11.0'
+   
+   platform :ios, $iOSVersion
+   use_frameworks!
+   
+   target 'YourProjectName' do
+
+       target 'YourProjectNameTests' do
+          inherit! :search_paths
+
+          pod 'SNUnitTestsOC' # Full version with all features
+       end
+   end
+```
+
+* 手动安装 manual install
+将Classes文件夹拽入项目中，OC项目还需要桥接
+<br>Drag the Classes folder into the project, OC project still needs bridging
+
 ## 单元测试示例 Unit Test Example
 ![20250417092731](https://github.com/user-attachments/assets/d96a72d3-994d-44ca-88b6-629141da0e90)
 
