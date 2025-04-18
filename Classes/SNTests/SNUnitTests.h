@@ -32,12 +32,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)highConcurrencyUnitTestingForClassMethodWithIterations:(NSInteger)iterations
                                                 timeoutSeconds:(NSTimeInterval)timeoutSeconds
+                                                       method:(id (^)(id _Nullable))method
+                                                        param:(id)param
+                                                     expected:(id)expected
+                                                       verbose:(BOOL)verbose;
+
+- (void)highConcurrencyUnitTestingForMethodWithIterations:(NSInteger)iterations
+                                                timeoutSeconds:(NSTimeInterval)timeoutSeconds
                                                     classType:(Class)classType
                                                        method:(id (^)(id instance))method
-                                                        param:(nullable id)param
+                                                        param:(id)param
                                                      expected:(id)expected
-                                                      verbose:(BOOL)verbose;
+                                                  verbose:(BOOL)verbose;
 
+- (void)efficiencyPerformanceTesting:(NSInteger)iterations
+                           threshold:(NSTimeInterval)threshold
+                               block:(void (^)(void))block
+                         failMessage:(nullable NSString *)failMessage;
 @end
 
 NS_ASSUME_NONNULL_END
